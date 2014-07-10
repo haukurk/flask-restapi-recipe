@@ -6,6 +6,7 @@ from restapi.utils.decorators import crossdomain
 from restapi.modules import responses, errors, statuscodes
 from restapi.components.auth.decorators import require_app_key
 from restapi.modules.cakes.models import Cake, db, CakeSerializer
+from sqlalchemy.exc import IntegrityError
 
 mod = Blueprint('cakes', __name__, url_prefix='/api/v<float:version>/cakes')
 
@@ -109,8 +110,8 @@ def insert_cake(version):
 
         try:
             db.session.commit()
-        except:
-            return errors.error_commit_error(), statuscodes.HTTP_INTERNAL_ERROR
+        except IntegrityError as ex:
+            return jsonify(errors.error_commit_error(ex)), statuscodes.HTTP_INTERNAL_ERROR
 
         return jsonify(
             responses.create_multiple_object_response('success', CakeSerializer(cake).data,
