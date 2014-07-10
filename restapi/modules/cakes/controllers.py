@@ -36,7 +36,7 @@ def get_cake(version, cake_id):
         return jsonify(errors.error_incorrect_version(version)), statuscodes.HTTP_VERSION_UNSUPPORTED
 
 
-@mod.route('/delete/<int:cake_id>', methods=['DELETE'])
+@mod.route('/<int:cake_id>', methods=['DELETE'])
 @crossdomain
 @require_app_key
 def delete_cake(version, cake_id):
@@ -55,7 +55,11 @@ def delete_cake(version, cake_id):
             return jsonify(errors.error_object_not_found()), statuscodes.HTTP_NOT_FOUND
 
         db.session.delete(cake)
-        db.session.commit()
+
+        try:
+            db.session.commit()
+        except IntegrityError as ex:
+            return jsonify(errors.error_commit_error(ex)), statuscodes.HTTP_INTERNAL_ERROR
 
         return jsonify(
             responses.create_single_object_response('success', CakeSerializer(cake).data, "cake")), statuscodes.HTTP_OK
