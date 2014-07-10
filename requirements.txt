@@ -1,0 +1,5 @@
+marshmallow
+logbook
+flask
+httplib2
+flask-sqlalchemy

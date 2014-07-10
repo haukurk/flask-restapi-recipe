@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+  <head>
+    {% block head %}
+    <title>{% block title %}{% endblock %} - API Help</title>
+    {% endblock %}
+  </head>
+  <body>
+    <div class="container" id="content">
+
+        {% block content %}{% endblock %}
+
+        <div class="text-center" id="text-center">
+          {% block footer %}
+          &copy; Copyright 2013-2014 by <a href="http://www.hauxi.is/">Haukur Kristinsson</a>.
+          {% endblock %}
+        </div>
+
+    </div>
+
+  </body>
+</html>
