@@ -1,16 +1,16 @@
-# A simple recipe for RESTful API packaged with an API key authentication.
+# A simple recipe for a RESTful API packaged with an API key authentication.
 This recipe is a really simple seed for a RESTful API, powered by Flask and SQLALchemy.
 It's a perfect starting point if you are in need of an API, quickly... At least I think so!
 
 The recipe includes the following features:
+* A naive method of API versioning.
 * Authentication component which you can decorate API methods with.
-    * A naive method of API versioning.
     * Manage.py, manages keys and allowed IPs (where 0.0.0.0 is considered all IPs).
     * The decorator *@require_app_key*, from *restapi.components.auth.decorators* then only allows keys generated with manage.py
-    * API control file, run.py:
-        * *-r* runs a development server
-        * *-i* initializes the database based on imported SQLALchemy models
-        * *-z* creates a interactive console, with flask app imported.
+* API control, run.py:
+    * *-r* runs a development server
+    * *-i* initializes the database based on imported SQLALchemy models
+    * *-z* creates a interactive console, with flask app imported.
 
 # Quick start.
 Use virtual environment, please.
