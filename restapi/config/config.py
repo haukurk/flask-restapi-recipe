@@ -20,3 +20,13 @@ class Development(DefaultConfig):
     DEBUG = True
     LOG_LEVEL = 'INFO'
     SQLALCHEMY_DATABASE_URI = "sqlite:///database/api_test.db"
+
+
+class UnitTesting(DefaultConfig):
+    """
+    Config class for unittests
+    """
+    DEBUG = True
+    LOG_LEVEL = 'INFO'
+    LOG_DIR = '../logs/'
+    SQLALCHEMY_DATABASE_URI = "sqlite:///database/api_unittest.db"
