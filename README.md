@@ -5,6 +5,7 @@ It's a perfect starting point if you are in need of an API, quickly... At least 
 The recipe includes the following features:
 * A naive method of API versioning.
 * Ability to switch between a development and Default application config, by using environmental variables.
+* Simple test cases in a form of unit tests.
 * Authentication component which you can decorate API methods with.
     * Manage.py, manages keys and allowed IPs (where 0.0.0.0 is considered all IPs).
     * The decorator *@require_app_key*, from *restapi.components.auth.decorators* then only allows keys generated with manage.py
@@ -13,7 +14,7 @@ The recipe includes the following features:
     * *-i* initializes the database based on imported SQLALchemy models
     * *-z* creates a interactive console, with flask app imported.
 
-# Quick start.
+# Quick Start
 Use virtual environment, please.
 ```
 $> pip install virtualenv
