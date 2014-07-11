@@ -48,6 +48,9 @@ Routes that does not matter.
 
 @app.route('/', methods=['GET', 'OPTIONS'])
 def api_root():
+    """
+    Just a route that says hello to the client if he goes to the root of the API. You can remove this if you want.
+    """
     body = "Hi, this is a RESTful API." \
            "\n Before using it you should be issued a API key from your friendly developer.."
     return render_template('front.html', content=body, title="Awesome API", version=version)
@@ -56,6 +59,9 @@ def api_root():
 @app.route("/version", methods=['GET', 'OPTIONS'])
 @require_app_key
 def api_latest_version():
+    """
+    Check version of the API, protected with authorization.
+    """
     return str(version)
 
 ## EOF Routes.

@@ -11,6 +11,9 @@ import logbook
 
 
 class LoggingSetup(object):
+    """
+    Base Logging setup class based on logbook.
+    """
     format_string = None
     handlers = None
 
@@ -44,6 +47,9 @@ class LoggingSetup(object):
 
 
 class ProductionLoggingSetup(LoggingSetup):
+    """
+    Logging setup class for production, inherits Base Logging class LoggingSetup.
+    """
     def __init__(self, log_level, filebased_log_path, format_string=None):
         super(ProductionLoggingSetup, self).__init__(log_level, format_string)
 

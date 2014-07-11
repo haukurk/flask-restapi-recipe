@@ -5,6 +5,9 @@ from marshmallow import Serializer, fields
 
 
 class Cake(BaseModel):
+    """
+    Cake class that defines how cake object are kept in the database.
+    """
     id = db.Column(db.Integer, primary_key=True)
     cakename = db.Column(db.String(80), unique=True)
     bakername = db.Column(db.String(120), unique=False)
@@ -23,6 +26,9 @@ class Cake(BaseModel):
 
 
 class CakeSerializer(Serializer):
+    """
+    Serializer for the SQLALchemy class. The magic is performed with marshmallow module.
+    """
     price_range = fields.Method("format_price_range")
 
     @staticmethod
