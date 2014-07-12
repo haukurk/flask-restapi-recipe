@@ -28,5 +28,4 @@ class UnitTesting(DefaultConfig):
     """
     DEBUG = True
     LOG_LEVEL = 'INFO'
-    LOG_DIR = '../logs/'
     SQLALCHEMY_DATABASE_URI = "sqlite:///database/api_unittest.db"

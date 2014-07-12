@@ -88,6 +88,13 @@ Summary of manage.py (authentication manager):
     ./run -a
     ```
 
+# Testing
+
+To run unittest classes simply run them with nose:
+```
+nosetests -v tests/unittest_basics.py
+```
+
 # JSON responses
 
 I advise to keep responses formats under control and to stay consistent at all times.
