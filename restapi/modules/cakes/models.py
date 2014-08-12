@@ -19,7 +19,11 @@ class Cake(BaseModel):
         self.price = price
 
     def as_dict(self):
-        return {c.name: getattr(self, c.name) for c in self.__table__.columns}
+        #return {c.name: getattr(self, c.name) for c in self.__table__.columns} # Python 2.6 does not support this.
+        cake_dict = {}
+        for c in self.__table__.columns:
+            cake_dict[c.name] = getattr(self, c.name)
+        return cake_dict
 
     def __repr__(self):
         return '<Cake %r>' % self.cakename
