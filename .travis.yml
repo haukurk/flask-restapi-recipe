@@ -1,1 +1,2 @@
+before_script: "chmod +x run_tests.sh"
 script: "./run_tests.sh"
