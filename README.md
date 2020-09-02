@@ -1,5 +1,7 @@
 [![Build Status](https://travis-ci.org/haukurk/flask-restapi-recipe.svg?branch=master)](https://travis-ci.org/haukurk/flask-restapi-recipe)
 
+[N.b. The API authentication approach is quite outdated. Please look into other ways such as JWT tokens]
+
 # A simple recipe for a RESTful API packaged with an API key authentication.
 This recipe is a really simple seed for a RESTful API, powered by Flask and SQLALchemy.
 It's a perfect starting point if you are in need of an API, quickly... At least I think so!
